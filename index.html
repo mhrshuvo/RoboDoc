@@ -1,115 +1,130 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ROBODOC | Futuristic Tech Blogging</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              background: '#050505',
-              neonCyan: '#00f2ff',
-              neonPurple: '#bc13fe',
-              techGreen: '#0aff0a',
-              techRed: '#ff0a0a',
-              surface: 'rgba(10, 20, 30, 0.6)',
-              surfaceBorder: 'rgba(0, 242, 255, 0.2)',
-            },
-            fontFamily: {
-              mono: ['"Share Tech Mono"', 'monospace'],
-              tech: ['"Rajdhani"', 'sans-serif'],
-            },
-            boxShadow: {
-              'neon-cyan': '0 0 10px rgba(0, 242, 255, 0.5), 0 0 20px rgba(0, 242, 255, 0.3)',
-              'neon-purple': '0 0 10px rgba(188, 19, 254, 0.5), 0 0 20px rgba(188, 19, 254, 0.3)',
-            }
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROBODOC | Futuristic Tech Blogging</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#050505',
+            neonCyan: '#00f2ff',
+            neonPurple: '#bc13fe',
+            techGreen: '#0aff0a',
+            techRed: '#ff0a0a',
+            surface: 'rgba(10, 20, 30, 0.6)',
+            surfaceBorder: 'rgba(0, 242, 255, 0.2)',
+          },
+          fontFamily: {
+            mono: ['"Share Tech Mono"', 'monospace'],
+            tech: ['"Rajdhani"', 'sans-serif'],
+          },
+          boxShadow: {
+            'neon-cyan': '0 0 10px rgba(0, 242, 255, 0.5), 0 0 20px rgba(0, 242, 255, 0.3)',
+            'neon-purple': '0 0 10px rgba(188, 19, 254, 0.5), 0 0 20px rgba(188, 19, 254, 0.3)',
           }
         }
       }
-    </script>
-    <style>
-      body {
-        background-color: #050505;
-        color: #c0c0c0;
-        font-family: 'Rajdhani', sans-serif;
-        background-image: 
-          linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
-        background-size: 40px 40px;
-        overflow-x: hidden;
-      }
-      
-      .scanlines {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: linear-gradient(
-          to bottom,
-          rgba(255,255,255,0),
-          rgba(255,255,255,0) 50%,
-          rgba(0,0,0,0.2) 50%,
-          rgba(0,0,0,0.2)
-        );
-        background-size: 100% 4px;
-        pointer-events: none;
-        z-index: 9999;
-        opacity: 0.6;
+    }
+  </script>
+  <style>
+    body {
+      background-color: #050505;
+      color: #c0c0c0;
+      font-family: 'Rajdhani', sans-serif;
+      background-image:
+        linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      overflow-x: hidden;
+      animation: gridScroll 20s linear infinite;
+    }
+
+    @keyframes gridScroll {
+      0% {
+        background-position: 0 0;
       }
 
-      .glass {
-        background: rgba(10, 15, 20, 0.7);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        border: 1px solid rgba(0, 242, 255, 0.15);
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      100% {
+        background-position: 0 40px;
       }
+    }
 
-      .clip-corner {
-        clip-path: polygon(
-          10px 0, 100% 0, 
-          100% calc(100% - 10px), calc(100% - 10px) 100%, 
-          0 100%, 0 10px
-        );
-      }
-      
-      .clip-corner-sm {
-        clip-path: polygon(
-          5px 0, 100% 0, 
-          100% calc(100% - 5px), calc(100% - 5px) 100%, 
-          0 100%, 0 5px
-        );
-      }
+    .scanlines {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(to bottom,
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0) 50%,
+          rgba(0, 0, 0, 0.2) 50%,
+          rgba(0, 0, 0, 0.2));
+      background-size: 100% 4px;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.6;
+    }
 
-      h1, h2, h3, h4, h5, h6 {
-        font-family: 'Rajdhani', sans-serif;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-      }
-      
-      code, pre {
-        font-family: 'Share Tech Mono', monospace;
-      }
+    .glass {
+      background: rgba(10, 15, 20, 0.7);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(0, 242, 255, 0.15);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
 
-      ::-webkit-scrollbar {
-        width: 10px;
-        background: #050505;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #00f2ff;
-        border: 2px solid #050505;
-      }
-      ::-webkit-scrollbar-corner {
-        background: #050505;
-      }
-    </style>
+    .clip-corner {
+      clip-path: polygon(10px 0, 100% 0,
+          100% calc(100% - 10px), calc(100% - 10px) 100%,
+          0 100%, 0 10px);
+    }
+
+    .clip-corner-sm {
+      clip-path: polygon(5px 0, 100% 0,
+          100% calc(100% - 5px), calc(100% - 5px) 100%,
+          0 100%, 0 5px);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Rajdhani', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    code,
+    pre {
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+      background: #050505;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #00f2ff;
+      border: 2px solid #050505;
+    }
+
+    ::-webkit-scrollbar-corner {
+      background: #050505;
+    }
+  </style>
   <script type="importmap">
 {
   "imports": {
@@ -119,10 +134,12 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
+  <link rel="stylesheet" href="/index.css">
 </head>
-  <body>
-    <div id="root"></div>
+
+<body>
+  <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>
+
 </html>

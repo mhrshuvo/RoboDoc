@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import BlogPostPage from './pages/BlogPost';
 import AboutPage from './pages/About';
+import SEO from './components/SEO';
 import { RouteState, PageType } from './types';
 
 const App: React.FC = () => {
@@ -88,6 +89,11 @@ const App: React.FC = () => {
       <div className="scanlines" />
       {/* Background Grid Accent */}
       <div className="fixed inset-0 bg-[url('https://patterns.ibrahimcesar.cloud/architect.svg')] opacity-5 pointer-events-none" />
+
+      <SEO
+        title="Home"
+        description="ROBODOC: The ultimate source for futuristic tech, AI, and robotics. Join the neural revolution."
+      />
 
       <Header activePage={route.page} onNavigate={navigate} />
 

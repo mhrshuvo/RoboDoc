@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { BlogPost, PageType } from '../types';
 import { MOCK_POSTS } from '../data';
 import AdSlot from '../components/AdSlot';
+import SEO from '../components/SEO';
 
 interface BlogPostPageProps {
   slug: string;
@@ -25,6 +26,15 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ slug, onNavigate }) => {
 
   return (
     <article className="min-h-screen">
+      <SEO
+        title={post.title}
+        description={post.description}
+        image={post.thumbnail}
+        type="article"
+        author={post.author.name}
+        publishedAt={post.publishedAt}
+        keywords={[post.category, 'Tech', 'Robotics', 'Future', 'AI']}
+      />
       {/* Scroll Progress Bar */}
       <div className="fixed top-16 left-0 w-full h-1 z-50 bg-white/5">
         <div
