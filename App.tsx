@@ -61,7 +61,7 @@ const App: React.FC = () => {
             <h1 className="text-4xl font-display font-bold text-white mb-8">Contact Control</h1>
             <p className="text-gray-400 mb-12">Transmission channels currently operating on low power.</p>
             <div className="glass max-w-lg mx-auto p-12 clip-corner border-l-2 border-neonCyan">
-              <p className="text-neonCyan font-mono text-xl tracking-wider">admin@robodoc.future</p>
+              <p className="text-neonCyan font-mono text-xl tracking-wider">robodoc.bangladesh@gmail.com</p>
             </div>
           </div>
         );
