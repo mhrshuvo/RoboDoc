@@ -4,8 +4,8 @@ import { BlogPost, Author } from './types';
 export const AUTHORS: Record<string, Author> = {
   'robo-editor': {
     id: 'robo-editor',
-    name: 'Dr. Nexus',
-    role: 'Lead AI Architect',
+    name: '@mhrshuvo',
+    role: 'Chief Robo-doc',
     avatar: 'https://picsum.photos/seed/drnexus/150/150',
     bio: 'Pioneer in neural network optimization and quantum computing ethics. Dr. Nexus has been writing about the fusion of humanity and silicon for over a decade.'
   }
